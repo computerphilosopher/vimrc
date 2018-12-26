@@ -27,7 +27,8 @@ nnoremap <CR> o <ESC>
 nnoremap <a-l> :NERDTreeToggle <CR>
 
 nnoremap <F5> :w <CR> :!gcc -o %< % <CR> :!./%< <CR>
-nnoremap <F7> :w <CR> :!g++ -o %< % <CR> :!./%< <CR>
+nnoremap <F4> :w <CR> :!python3 % <CR>
+nnoremap <F7> :w <CR> :!g++ -std=c++11 -o %< % <CR> :!./%< <CR>
 
 set autoindent
 set smartindent
@@ -50,6 +51,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:ycm_show_diagnostics_ui = 0
-vmap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR> <CR>
+let g:syntastic_cpp_compiler_options = '-std=c++11'
+vnoremap <C-c> y:new ~/.vimbuffer<CR>VGp:x<CR> \| :!cat ~/.vimbuffer \| clip.exe <CR> <CR>
 "map <C-v> :r ~/.vimbuffer<CR>
 
